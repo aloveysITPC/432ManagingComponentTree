@@ -1,21 +1,14 @@
 import React, { useState } from "react";
 
 function ToDoItem(props) {
-  // adding state to a component
-  const [isDone, setIsDone] = useState(false);
-
-  function handleClick() {
-    setIsDone((prevValue) => {
-      return !prevValue;
-    });
-  }
-
+  //  get props from app.jsx triggered - passed to child
   return (
-    <div onClick={handleClick}>
-      {/* //added style */}
-      <li style={{ textDecoration: isDone ? "line-through" : "none" }}>
-        {props.text}
-      </li>
+    <div
+      onClick={() => {
+        props.onChecked(props.id);
+      }}
+    >
+      <li>{props.text}</li>
     </div>
   );
 }
