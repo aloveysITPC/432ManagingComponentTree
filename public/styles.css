@@ -77,3 +77,10 @@ li {
   position: relative;
   padding: 0.5rem;
 }
+
+#done {
+  text-align: left;
+  text-decoration: line-through;
+  position: relative;
+  padding: 0.5rem;
+}
