@@ -3,13 +3,14 @@ import ToDoItem from "./ToDoItem";
 
 function App() {
   const [inputText, setInputText] = useState("");
+  // creating an array that is empty
   const [items, setItems] = useState([]);
 
   function handleChange(event) {
     const newValue = event.target.value;
     setInputText(newValue);
   }
-
+  // updating the array
   function addItem() {
     setItems((prevItems) => {
       return [...prevItems, inputText];
@@ -41,6 +42,7 @@ function App() {
         <ul>
           {items.map((todoItem, index) => (
             <ToDoItem
+              // must have a key when mapping through arrays
               key={index}
               id={index}
               text={todoItem}
